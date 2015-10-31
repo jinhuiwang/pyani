@@ -49,7 +49,7 @@
 <pre><code>pip install pyani
 </code></pre>
 
-<p>From version 0.1.3.2 onwards, this should also install all the required dependencies. Prior to this version (i.e. 0.1.3.1 and earlier), you can acquire these dependencies with <code>pip -r</code>, and pointing at <code>requirements.txt</code> from this repository:</p>
+<p>From version 0.1.3.2 onwards, this should also install all the required Python package dependencies. Prior to this version (i.e. 0.1.3.1 and earlier), you can acquire these dependencies with <code>pip -r</code>, and pointing at <code>requirements.txt</code> from this repository:</p>
 
 <pre><code>pip install -r requirements.txt
 </code></pre>
@@ -106,7 +106,7 @@ $ ./average_nucleotide_identity.py -i tests/test_ani_data/ -o tests/test_TETRA_o
 <h2>
 <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>DEPENDENCIES</h2>
 
-<p>Note that dependencies should automatically be installed if you are using version 0.1.3.2 or greater, and installing with <code>pip install pyani</code>.</p>
+<p>Note that Python package dependencies should automatically be installed if you are using version 0.1.3.2 or greater, and installing with <code>pip install pyani</code>.</p>
 
 <p>For earlier versions, you can satisfy dependencies by using <code>pip install -r requirements.txt</code> (using the <code>requirements.txt</code> file in this repository).</p>
 
@@ -123,8 +123,17 @@ $ ./average_nucleotide_identity.py -i tests/test_ani_data/ -o tests/test_TETRA_o
 <li>
 <strong>pandas</strong> <a href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>
 </li>
-<li><p><strong>SciPy</strong> <a href="http://www.scipy.org/">http://www.scipy.org/</a></p></li>
-<li><p><strong>BLAST+</strong> executable in the <code>$PATH</code>, or available on the command line (required for <strong>ANIb</strong> analysis) ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</p></li>
+<li>
+<strong>SciPy</strong> <a href="http://www.scipy.org/">http://www.scipy.org/</a>
+</li>
+</ul>
+
+<h4>
+<a id="alignment-tools" class="anchor" href="#alignment-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alignment tools</h4>
+
+<ul>
+<li>
+<strong>BLAST+</strong> executable in the <code>$PATH</code>, or available on the command line (required for <strong>ANIb</strong> analysis) ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</li>
 <li>
 <strong>legacy BLAST</strong> executable in the <code>$PATH</code> or available on the command line (required for <strong>ANIblastall</strong> analysis) ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/</li>
 <li>
@@ -197,14 +206,14 @@ them sensibly.</p>
 
 <ul>
 <li>
-<strong>ANIm</strong>: MUMmer/NUCmer .delta files, describing each pairwise sequence alignment. Output as tab-separated plain text and Excel format tables describing: alignment coverage; total alignment lengths; similarity errors; and percentage identity (ANIm).</li>
+<strong>ANIm</strong>: MUMmer/NUCmer .delta files, describing each pairwise sequence alignment. Output as tab-separated plain text format tables describing: alignment coverage; total alignment lengths; similarity errors; and percentage identity (ANIm).</li>
 <li>
-<strong>ANIb</strong> and <strong>ANIblastall</strong>: FASTA sequences describing 1020nt fragments of each input sequence; BLAST nucleotide databases - one for each set of fragments; and BLASTN output files (tab-separated tabular format plain text) - one for each pairwise comparison of input sequences. Output as tab-separated plain text and Excel format tables describing: alignment coverage; total alignment lengths; similarity errors; and percentage identity (ANIb or ANIblastall).</li>
+<strong>ANIb</strong> and <strong>ANIblastall</strong>: FASTA sequences describing 1020nt fragments of each input sequence; BLAST nucleotide databases - one for each set of fragments; and BLASTN output files (tab-separated tabular format plain text) - one for each pairwise comparison of input sequences. Output as tab-separated plain text tables describing: alignment coverage; total alignment lengths; similarity errors; and percentage identity (ANIb or ANIblastall).</li>
 <li>
-<strong>TETRA</strong>: Tab-separated plain text and Excel format files describing the Pearson correlations between Z-score distributions for each tetranucleotide in each input sequence (TETRA).</li>
+<strong>TETRA</strong>: Tab-separated plain text files describing the Pearson correlations between Z-score distributions for each tetranucleotide in each input sequence (TETRA).</li>
 </ul>
 
-<p>If graphical output is chosen, the output directory will also contain PDF files representing the similarity between sequences as a heatmap with row and column dendrograms.</p>
+<p>If graphical output is chosen, the output directory will also contain PDF, PNG and EPS files representing the various output measures as a heatmap with row and column dendrograms. Other output formats (e.g. SVG) can be specified with the <code>--gformat</code> argument.</p>
 
 <h2>
 <a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h2>
